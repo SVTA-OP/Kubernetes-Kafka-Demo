@@ -59,6 +59,25 @@ Kubernetes/
 
 ---
 
+## Step 0 — Start Minikube
+
+Before anything else, start your local Kubernetes cluster:
+
+```bash
+minikube start
+```
+
+Verify the cluster is reachable:
+
+```bash
+kubectl get nodes
+# Should show a node in Ready state
+```
+
+> **If you see `dial tcp ... no route to host`** when running `kubectl apply`, it means Minikube is not running. Always start Minikube first before any `kubectl` or `docker` commands.
+
+---
+
 ## Step 1 — Build the Docker Image
 
 From inside the `Kubernetes/` directory, build the image natively so Kubernetes can access it:
